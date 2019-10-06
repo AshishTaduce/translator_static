@@ -357,12 +357,15 @@ class _DicePageState extends State<DicePage> {
                                       //color: Colors.grey,
                                     ),),
                                 ),
-                                Text('"He walked into Steins lounge on Tuesday morning, bidding good morning to everyone who lined is route to top table."',
-                                  style: TextStyle(
-                                    //fontStyle: FontStyle.italic,
-                                    color: Colors.grey,
-                                    fontSize: 15,
-                                  ),),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
+                                  child: Text('"He walked into Steins lounge on Tuesday morning, bidding good morning to everyone who lined is route to top table."',
+                                    style: TextStyle(
+                                      //fontStyle: FontStyle.italic,
+                                      color: Colors.grey,
+                                      fontSize: 15,
+                                    ),),
+                                ),
                               ],
                             ),
                           )
