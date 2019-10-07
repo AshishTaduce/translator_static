@@ -165,6 +165,15 @@ class _DicePageState extends State<DicePage> {
                                 ),),
                             ],
                           ),
+                          SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: const DecoratedBox(
+                              decoration: const BoxDecoration(
+                                  color: Colors.white
+                              ),
+                            ),
+                          ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
@@ -268,11 +277,14 @@ class _DicePageState extends State<DicePage> {
                               ),),
                           ],
                         ),
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: <Widget>[
-                            Text('')
-                          ],
+                        SizedBox(
+                          width: 48,
+                          height: 48,
+                          child: const DecoratedBox(
+                            decoration: const BoxDecoration(
+                                color: Colors.blue
+                            ),
+                          ),
                         ),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
