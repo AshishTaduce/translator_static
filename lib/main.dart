@@ -44,6 +44,7 @@ class _DicePageState extends State<DicePage> {
       ),
       body: Center(
         child: Container(
+          color: Colors.grey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             //crossAxisAlignment: CrossAxisAlignment.center,
@@ -366,7 +367,7 @@ class _DicePageState extends State<DicePage> {
                                 Padding(
                                   padding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
                                   child: Text('"He walked into Steins lounge on Tuesday morning, bidding good morning to everyone who lined is route to top table."',
-                                    textAlign: TextAlign.center,
+                                    textAlign: TextAlign.left,
                                     softWrap: true,
                                     style: TextStyle(
                                       //fontStyle: FontStyle.italic,
