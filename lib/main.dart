@@ -161,64 +161,61 @@ class _DicePageState extends State<DicePage> {
                             children: <Widget>[
                               Text('good morning',
                                 style: TextStyle(
-                                  fontSize: 36,
+                                  fontSize: 24,
                                 ),),
                             ],
                           ),
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                //crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: <Widget>[
-                                  Column(
-                                    children: <Widget>[
-                                      Icon(Icons.camera_enhance,
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              //crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: <Widget>[
+                                Column(
+                                  children: <Widget>[
+                                    Icon(Icons.camera_enhance,
+                                    color: Colors.blue,
+                                    ),
+                                    Text('Camera'),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Icon(Icons.edit,
                                       color: Colors.blue,
-                                      ),
-                                      Text('Camera'),
-                                    ],
-                                  ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Icon(Icons.edit,
-                                        color: Colors.blue,
-                                      ),
-                                      Text('Handwriting'),
-                                    ],
-                                  ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Row(
-                                        children: <Widget>[
-                                          Icon(Icons.mic,
-                                            color: Colors.blue,
-                                          ),
-                                          Icon(Icons.mic_none,
-                                            color: Colors.blue,
-                                          ),
-                                        ],
-                                      ),
-                                      Text('Conversation'),
-                                    ],
-                                  ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Icon(Icons.mic,
-                                        color: Colors.blue,
-                                      ),
-                                      Text('Voice'),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
+                                    ),
+                                    Text('Handwriting'),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Row(
+                                      children: <Widget>[
+                                        Icon(Icons.mic,
+                                          color: Colors.blue,
+                                        ),
+                                        Icon(Icons.mic_none,
+                                          color: Colors.blue,
+                                        ),
+                                      ],
+                                    ),
+                                    Text('Conversation'),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Icon(Icons.mic,
+                                      color: Colors.blue,
+                                    ),
+                                    Text('Voice'),
+                                  ],
+                                ),
+                              ],
+                            ),
                           )
                         ],
                       ),
@@ -227,93 +224,88 @@ class _DicePageState extends State<DicePage> {
                 ),
               ),
               Expanded(
-                flex: 20,
-                child: Container(
+                flex: 23,
+                child: Material(
                   color: Colors.blue,
-                  margin: EdgeInsets.symmetric(vertical: 2, horizontal: 8),
-                  child: Material(
-                    color: Colors.blue,
-                    elevation: 2.0,
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Icon (
-                                    Icons.volume_up,
-                                    color: Colors.white,
-                                  ),
-                                  Text(
-                                    'INDONESIAN',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                    ),
-                                  )
-                                ],
-                              ),
-                              Icon(
-                                Icons.star_border,
-                                color: Colors.white,
-                              ),
-
-                            ],
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text('Selamet pagi.',
-                                style: TextStyle(
-                                  fontSize: 36,
+                  elevation: 2.0,
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Icon (
+                                  Icons.volume_up,
                                   color: Colors.white,
-                                ),),
-                            ],
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text('')
+                                ),
+                                Text(
+                                  'INDONESIAN',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                  ),
+                                )
                               ],
-                          ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            mainAxisSize: MainAxisSize.max,
-                            children: <Widget>[
-                              Column(
-                                children: <Widget>[
-                                  Icon(Icons.content_copy,
-                                    color: Colors.white,
-                                  ),
-                                 // Text('Camera'),
-                                ],
-                              ),
-                              Text('     '),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Icon(Icons.more_vert,
-                                    color: Colors.white,
-                                  ),
-                                  //Text('Handwriting'),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                            ),
+                            Icon(
+                              Icons.star_border,
+                              color: Colors.white,
+                            ),
+
+                          ],
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text('Selamet pagi.',
+                              style: TextStyle(
+                                fontSize: 36,
+                                color: Colors.white,
+                              ),),
+                          ],
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: <Widget>[
+                            Text('')
+                          ],
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          mainAxisSize: MainAxisSize.max,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Icon(Icons.content_copy,
+                                  color: Colors.white,
+                                ),
+                               // Text('Camera'),
+                              ],
+                            ),
+                            Text('     '),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(Icons.more_vert,
+                                  color: Colors.white,
+                                ),
+                                //Text('Handwriting'),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),
               ),
               Expanded(
-                flex: 22,
+                flex: 23,
                 child: Container(
                   margin: EdgeInsets.symmetric(vertical: 2, horizontal: 8),
                   child: Material(
@@ -329,7 +321,7 @@ class _DicePageState extends State<DicePage> {
                              children: <Widget>[
                                Text('DEFINATIONS',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        //fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
                                ),
@@ -363,10 +355,11 @@ class _DicePageState extends State<DicePage> {
                                   padding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
                                   child: Text('"He walked into Steins lounge on Tuesday morning, bidding good morning to everyone who lined is route to top table."',
                                     textAlign: TextAlign.center,
+                                    softWrap: true,
                                     style: TextStyle(
                                       //fontStyle: FontStyle.italic,
                                       color: Colors.grey,
-                                      fontSize: 15,
+                                      fontSize: 12,
                                     ),),
                                 ),
                               ],
@@ -379,7 +372,7 @@ class _DicePageState extends State<DicePage> {
                 ),
               ),
               Expanded(
-                flex: 8,
+                flex: 7,
                 child: Container(
 
                 ),
