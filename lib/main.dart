@@ -343,14 +343,16 @@ class _DicePageState extends State<DicePage> {
                          ),
 
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
+                            padding: const EdgeInsets.fromLTRB(0, 2, 0, 2),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
+                              //mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Padding(
-                                  padding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
+                                  padding: const EdgeInsets.fromLTRB(0, 2, 0, 2),
                                   child: Text('express good wishes on meeting or parting during morning',
+                                    textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize: 15
                                       //fontStyle: FontStyle.italic,
@@ -360,6 +362,7 @@ class _DicePageState extends State<DicePage> {
                                 Padding(
                                   padding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
                                   child: Text('"He walked into Steins lounge on Tuesday morning, bidding good morning to everyone who lined is route to top table."',
+                                    textAlign: TextAlign.center,
                                     style: TextStyle(
                                       //fontStyle: FontStyle.italic,
                                       color: Colors.grey,
