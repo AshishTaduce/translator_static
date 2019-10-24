@@ -19,6 +19,7 @@ class _DicePageState extends State<DicePage> {
   String language1 = 'English';
   String language2 = 'Indonesian';
   String temp = ' ';
+  bool switchOn = false;
 
   @override
   Widget build(BuildContext context) {
@@ -58,16 +59,19 @@ class _DicePageState extends State<DicePage> {
                     color: Colors.white,
                     elevation: 20.0,
                     child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      padding: const EdgeInsets.all(0.0),
+                      child: Stack(
                         children: <Widget>[
-                          Expanded(
-                            flex: 2,
+                          AnimatedPositioned(
+                            duration: Duration(milliseconds: 300),
+                            right: switchOn ? 10 : 250,
+                            top: 25,
+                            left: switchOn ? 250 : 20,
                             child: Row(
                               children: <Widget>[
                                 Text(
                                   '$language1',
+                                  textAlign: TextAlign.left,
                                   style: TextStyle(
                                     fontSize: 24,
                                     color: Colors.blue,
@@ -80,26 +84,35 @@ class _DicePageState extends State<DicePage> {
                               ],
                             ),
                           ),
-                          Expanded(
-                            flex: 1,
-                            child: IconButton(
-                              icon: Icon(
-                                Icons.swap_horiz,
-                                color: Colors.blue,
+                          Positioned(
+                            right: 75,
+                            left: 50 ,
+                            top: 13,
+                            child: Container(
+                              width:  40,
+                              height: 40,
+                              child: IconButton(
+                                icon: Icon(
+                                  Icons.swap_horiz,
+                                  color: Colors.blue,
+                                  size: 32,
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    switchOn = switchOn ? false : true;
+                                  });
+                                },
                               ),
-                              onPressed: () {
-                                setState(() {
-                                  temp = language1;
-                                  language1 = language2;
-                                  language2 = temp;
-                                });
-                              },
                             ),
                           ),
-                          Expanded(
-                            flex: 2,
+                          AnimatedPositioned(
+                            duration: Duration( milliseconds: 350),
+                            right: switchOn ? 250 : 10,
+                            top: 25,
+                            left: switchOn ? 10 : 250,
+
                             child: Row(
-                              mainAxisSize: MainAxisSize.max,
+                              mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: <Widget>[
                                 Text(
@@ -235,84 +248,88 @@ class _DicePageState extends State<DicePage> {
               ),
               Expanded(
                 flex: 23,
-                child: Material(
-                  color: Colors.blue,
-                  elevation: 2.0,
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Icon (
-                                  Icons.volume_up,
-                                  color: Colors.white,
-                                ),
-                                Text(
-                                  'INDONESIAN',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                  ),
-                                )
-                              ],
-                            ),
-                            Icon(
-                              Icons.star_border,
-                              color: Colors.white,
-                            ),
+                child: Container(
+                  margin: EdgeInsets.symmetric(vertical: 2, horizontal: 8),
 
-                          ],
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text('Selamet pagi.',
-                              style: TextStyle(
-                                fontSize: 36,
+                  child: Material(
+                    color: Colors.blue,
+                    elevation: 2.0,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Icon (
+                                    Icons.volume_up,
+                                    color: Colors.white,
+                                  ),
+                                  Text(
+                                    'INDONESIAN',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                    ),
+                                  )
+                                ],
+                              ),
+                              Icon(
+                                Icons.star_border,
                                 color: Colors.white,
-                              ),),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 48,
-                          height: 48,
-                          child: const DecoratedBox(
-                            decoration: const BoxDecoration(
-                                color: Colors.blue
+                              ),
+
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text('Selamet pagi.',
+                                style: TextStyle(
+                                  fontSize: 36,
+                                  color: Colors.white,
+                                ),),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 48,
+                            height: 48,
+                            child: const DecoratedBox(
+                              decoration: const BoxDecoration(
+                                  color: Colors.blue
+                              ),
                             ),
                           ),
-                        ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          mainAxisSize: MainAxisSize.max,
-                          children: <Widget>[
-                            Column(
-                              children: <Widget>[
-                                Icon(Icons.content_copy,
-                                  color: Colors.white,
-                                ),
-                               // Text('Camera'),
-                              ],
-                            ),
-                            Text('     '),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Icon(Icons.more_vert,
-                                  color: Colors.white,
-                                ),
-                                //Text('Handwriting'),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisSize: MainAxisSize.max,
+                            children: <Widget>[
+                              Column(
+                                children: <Widget>[
+                                  Icon(Icons.content_copy,
+                                    color: Colors.white,
+                                  ),
+                                 // Text('Camera'),
+                                ],
+                              ),
+                              Text('     '),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Icon(Icons.more_vert,
+                                    color: Colors.white,
+                                  ),
+                                  //Text('Handwriting'),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
