@@ -64,9 +64,9 @@ class _DicePageState extends State<DicePage> {
                         children: <Widget>[
                           AnimatedPositioned(
                             duration: Duration(milliseconds: 300),
-                            right: switchOn ? 10 : 250,
+                            right: switchOn ? 0 : 250,
                             top: 25,
-                            left: switchOn ? 250 : 20,
+                            left: switchOn ? 300 : 20,
                             child: Row(
                               children: <Widget>[
                                 Text(
@@ -107,9 +107,9 @@ class _DicePageState extends State<DicePage> {
                           ),
                           AnimatedPositioned(
                             duration: Duration( milliseconds: 350),
-                            right: switchOn ? 250 : 10,
+                            right: switchOn ? 250 : 20,
                             top: 25,
-                            left: switchOn ? 10 : 250,
+                            left: switchOn ? 20 : 250,
 
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
