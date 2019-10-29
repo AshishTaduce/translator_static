@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +22,7 @@ class _DicePageState extends State<DicePage> {
   String language2 = 'Indonesian';
   String temp = ' ';
   bool switchOn = false;
+  double turn = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -91,18 +94,24 @@ class _DicePageState extends State<DicePage> {
                             child: Container(
                               width:  40,
                               height: 40,
-                              child: IconButton(
-                                icon: Icon(
-                                  Icons.swap_horiz,
-                                  color: Colors.blue,
-                                  size: 32,
+                                child: IconButton(
+                                  icon: Transform.rotate(
+                                    angle: turn,
+                                    child: Icon(
+                                      Icons.swap_horiz,
+                                      color: Colors.blue,
+                                      size: 32,
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      switchOn = switchOn ? false : true;
+                                      turn = switchOn ? pi : 0;
+
+                                    });
+                                  },
                                 ),
-                                onPressed: () {
-                                  setState(() {
-                                    switchOn = switchOn ? false : true;
-                                  });
-                                },
-                              ),
+
                             ),
                           ),
                           AnimatedPositioned(
